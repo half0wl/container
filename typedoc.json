@@ -1,0 +1,19 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["packages/container/src/index.ts"],
+  "tsconfig": "packages/container/tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "out": "packages/docs/api",
+  "outputFileStrategy": "members",
+  "flattenOutputFiles": true,
+  "hidePageHeader": true,
+  "hidePageTitle": false,
+  "hideGroupHeadings": false,
+  "useCodeBlocks": true,
+  "expandObjects": true,
+  "parametersFormat": "table",
+  "enumMembersFormat": "table",
+  "indexFormat": "table",
+  "excludePrivate": true,
+  "excludeInternal": true
+}

@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "api": "typedoc --options ../../typedoc.json && mv api/README.md api/index.md && sed -i.bak 's|README.md|index.md|g' api/*.md && rm -f api/*.bak",
+    "dev": "pnpm api && vitepress dev",
+    "build": "pnpm api && vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "typedoc": "^0.28.17",
+    "typedoc-plugin-markdown": "^4.10.0"
+  }
+}
