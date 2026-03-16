@@ -12,7 +12,7 @@
     "typecheck": "pnpm -r --if-present typecheck",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
-    "pub": "cd packages/container && pnpm publish --access public"
+    "release": "cp README.md packages/container/README.md && cd packages/container && pnpm publish --access public"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.7"
