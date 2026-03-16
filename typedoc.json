@@ -15,5 +15,6 @@
   "enumMembersFormat": "table",
   "indexFormat": "table",
   "excludePrivate": true,
-  "excludeInternal": true
+  "excludeInternal": true,
+  "readme": "none"
 }
