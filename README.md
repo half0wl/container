@@ -1,17 +1,17 @@
-# 📦 @raychen/container
+# 📦 container
 
-[![npm](https://img.shields.io/npm/v/@raychen/container?logo=npm)](https://www.npmjs.com/package/@raychen/container)
+[![npm](https://img.shields.io/npm/v/@half0wl/container?logo=npm)](https://www.npmjs.com/package/@half0wl/container)
 [![ci](https://github.com/half0wl/container-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/half0wl/container-dev/actions/workflows/ci.yml)
 [![docs](https://img.shields.io/badge/%F0%9F%93%9A_docs-container.lib.ray.cat-blue)](https://container.lib.ray.cat)
 
 Lightweight decorator-based dependency injection container for TypeScript.
 
 ```bash
-pnpm i @raychen/container
+pnpm i @half0wl/container
 ```
 
 ```ts
-import { Container, BaseService, Service, Inject } from "@raychen/container";
+import { Container, BaseService, Service, Inject } from "@half0wl/container";
 
 interface ContainerDeps {
   db: DatabaseClient;

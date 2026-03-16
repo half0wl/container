@@ -5,12 +5,12 @@
 Lightweight decorator-based dependency injection container for TypeScript.
 
 ```bash
-pnpm i @raychen/container
+pnpm i @half0wl/container
 ```
 
 ## TypeScript Configuration
 
-`@raychen/container` uses legacy TypeScript decorators. Add this to your `tsconfig.json`:
+`@half0wl/container` uses legacy TypeScript decorators. Add this to your `tsconfig.json`:
 
 ```json
 {
@@ -23,7 +23,7 @@ pnpm i @raychen/container
 ## Quick Example
 
 ```ts
-import { Container, BaseService, Service, Inject } from "@raychen/container";
+import { Container, BaseService, Service, Inject } from "@half0wl/container";
 
 // 1. Define your dependency shape
 interface ContainerDeps {

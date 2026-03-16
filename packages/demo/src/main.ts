@@ -1,4 +1,4 @@
-import { BaseService, Container, Inject, Service } from "@raychen/container";
+import { BaseService, Container, Inject, Service } from "@half0wl/container";
 
 interface DatabaseClient {
   users: {
@@ -100,7 +100,7 @@ class NotificationService extends BaseService<ContainerDeps> {
 }
 
 function main() {
-  console.log("=== @raychen/container demo ===\n");
+  console.log("=== @half0wl/container demo ===\n");
 
   // 1. Create a container with deps
   const container = Container.create<ContainerDeps>({

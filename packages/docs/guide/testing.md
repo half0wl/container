@@ -75,7 +75,7 @@ const second = container.get(UserService);
 
 ```ts
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { Container, BaseService, Service, Inject } from '@raychen/container';
+import { Container, BaseService, Service, Inject } from '@half0wl/container';
 
 interface TestDeps {
   db: { users: { findUnique: (q: any) => any } };

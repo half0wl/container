@@ -1,5 +1,5 @@
 {
-  "name": "@raychen/container",
+  "name": "@half0wl/container",
   "version": "1.0.0",
   "description": "Lightweight decorator-based dependency injection container for TypeScript services",
   "type": "module",

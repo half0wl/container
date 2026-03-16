@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "@raychen/container",
+  title: "@half0wl/container",
   description:
     "Lightweight decorator-based dependency injection container for TypeScript",
   cleanUrls: true,

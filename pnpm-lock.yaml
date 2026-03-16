@@ -26,7 +26,7 @@ importers:
 
   packages/demo:
     dependencies:
-      '@raychen/container':
+      '@half0wl/container':
         specifier: workspace:*
         version: link:../container
     devDependencies:
