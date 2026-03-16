@@ -5,7 +5,9 @@ export default defineConfig({
   description:
     "Lightweight decorator-based dependency injection container for TypeScript",
   cleanUrls: true,
-  head: [["link", { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }]],
+  head: [
+    ["link", { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+  ],
   themeConfig: {
     nav: [
       { text: "Guide", link: "/guide/getting-started" },
