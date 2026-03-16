@@ -2,8 +2,8 @@
 
 [![github](https://img.shields.io/github/stars/half0wl/container?logo=github)](https://github.com/half0wl/container)
 [![npm](https://img.shields.io/npm/v/@half0wl/container?logo=npm)](https://www.npmjs.com/package/@half0wl/container)
-[![ci](https://github.com/half0wl/container/actions/workflows/ci.yml/badge.svg)](https://github.com/half0wl/container/actions/workflows/ci.yml)
 [![docs](https://img.shields.io/badge/%F0%9F%93%9A_docs-container.lib.ray.cat-blue)](https://container.lib.ray.cat)
+[![ci](https://github.com/half0wl/container/actions/workflows/ci.yml/badge.svg)](https://github.com/half0wl/container/actions/workflows/ci.yml)
 
 Lightweight decorator-based dependency injection container for TypeScript.
 
