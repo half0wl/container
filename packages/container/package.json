@@ -1,6 +1,6 @@
 {
   "name": "@half0wl/container",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight decorator-based dependency injection container for TypeScript services",
   "type": "module",
   "main": "./dist/index.cjs",
