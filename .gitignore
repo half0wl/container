@@ -5,3 +5,4 @@ dist/
 packages/docs/api/
 packages/docs/.vitepress/cache/
 packages/docs/.vitepress/dist/
+packages/container/README.md
