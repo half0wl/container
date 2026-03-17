@@ -7,6 +7,14 @@ export default defineConfig({
   cleanUrls: true,
   head: [
     ["link", { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+    [
+      "script",
+      {
+        defer: "",
+        src: "https://food.ray.cat/script.js",
+        "data-website-id": "9e7fd24c-02c0-4e73-af2c-a8af32d3e32b",
+      },
+    ],
   ],
   themeConfig: {
     nav: [
