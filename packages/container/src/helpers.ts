@@ -66,13 +66,18 @@ export function wrapWithTracing(
 
       const original = desc.value as (...args: unknown[]) => unknown;
       const spanName = `${className}.${key}`;
+      const isAsync = original.constructor.name === "AsyncFunction";
 
-      (instance as Record<string, unknown>)[key] = function (
-        this: unknown,
-        ...args: unknown[]
-      ) {
-        return trace(spanName, () => original.apply(this, args));
-      };
+      // For async methods, pass an async callback to trace() so tracing
+      // libraries (e.g., DD APM) that detect async functions keep the
+      // span open until the promise settles.
+      (instance as Record<string, unknown>)[key] = isAsync
+        ? function (this: unknown, ...args: unknown[]) {
+            return trace(spanName, async () => original.apply(this, args));
+          }
+        : function (this: unknown, ...args: unknown[]) {
+            return trace(spanName, () => original.apply(this, args));
+          };
     }
     proto = Object.getPrototypeOf(proto);
   }

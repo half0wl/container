@@ -219,4 +219,33 @@ describe("wrapWithTracing", () => {
     instance.childMethod();
     expect(trace.mock.calls[0][0]).toBe("Child.childMethod");
   });
+
+  it("passes an async callback to trace for async methods", async () => {
+    class WithAsync extends StopClass {
+      async fetchData() {
+        return "data";
+      }
+      syncMethod() {
+        return "sync";
+      }
+    }
+    const callbacks: Array<{ name: string; isAsync: boolean }> = [];
+    const trace = vi.fn((name: string, fn: () => unknown) => {
+      callbacks.push({
+        name,
+        isAsync: fn.constructor.name === "AsyncFunction",
+      });
+      return fn();
+    });
+    const instance = new WithAsync();
+    wrapWithTracing(instance, trace, StopClass.prototype);
+
+    instance.syncMethod();
+    await instance.fetchData();
+
+    const syncCall = callbacks.find((c) => c.name === "WithAsync.syncMethod");
+    const asyncCall = callbacks.find((c) => c.name === "WithAsync.fetchData");
+    expect(syncCall?.isAsync).toBe(false);
+    expect(asyncCall?.isAsync).toBe(true);
+  });
 });
