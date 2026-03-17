@@ -24,10 +24,28 @@ class OrderService extends BaseService<ContainerDeps> {
 
 `@Inject(() => ServiceClass)` defines a lazy getter on the class prototype:
 
-1. **First access** — calls `this.registry.get(ServiceClass)` to resolve the dependency from the same container
+1. **First access** — resolves the dependency from the same container
 2. **Subsequent accesses** — returns the cached instance (stored in a Symbol-keyed property)
 
-Since the getter calls `this.registry.get()`, the resolved service is always the singleton from the same container. This is what makes test isolation work.
+The resolved service is always the singleton from the same container. This is what makes test isolation work.
+
+## Dynamic Resolution
+
+Under the hood, `@Inject` calls `this.registry.get(ServiceClass)`. You can call this directly when you need to resolve a service dynamically or conditionally:
+
+```ts
+@Service()
+class NotificationService extends BaseService<ContainerDeps> {
+  notify(userId: string, channel: 'email' | 'sms') {
+    const sender = channel === 'email'
+      ? this.registry.get(EmailService)
+      : this.registry.get(SmsService);
+    sender.send(userId);
+  }
+}
+```
+
+**Prefer `@Inject` for all static dependencies.** Only use `this.registry.get()` when the service to resolve isn't known at class definition time.
 
 ## Why a Factory Function?
 

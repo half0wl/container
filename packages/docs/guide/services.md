@@ -30,7 +30,7 @@ When the container constructs a service, it passes `{ ...yourDeps, registry: con
 | Field | Type | Description |
 |-------|------|-------------|
 | `this.deps` | `TDeps` | Your user-defined dependencies |
-| `this.registry` | `IContainer` | The container (used by `@Inject` internally) |
+| `this.registry` | `IContainer` | The container (used by `@Inject` internally; see [Dynamic Resolution](/guide/injection#dynamic-resolution) for direct usage) |
 
 ## Generic Dependencies
 
